@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import Todo from "../components/Todo";
-import "../App.css";
 import logo from "../logo.svg";
 
 const MainRoute = () => {

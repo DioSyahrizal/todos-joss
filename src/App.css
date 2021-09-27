@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+li {
+  margin: 0 10px;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+.active-navlink {
+  color: green;
+  border-bottom: 1px solid green;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: grey;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}

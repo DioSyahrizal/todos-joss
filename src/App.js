@@ -1,30 +1,33 @@
-import {
-  BrowserRouter as Router,
-  Link,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Detail from "./components/Detail";
 import Coba from "./components/Coba";
+import NotFound from "./components/NotFound";
 
 import MainRoute from "./routes/MainRoute";
+import NavItem from "./components/NavItem";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <div>
         <nav>
-          <ul>
+          <ul
+            style={{
+              display: "flex",
+              alignContent: "center",
+              listStyleType: "none",
+            }}
+          >
             <li>
-              <a href="/">Homes</a>
+              <NavItem link="/">Homes</NavItem>
             </li>
             <li>
-              <Link to="/content">Content</Link>
+              <NavItem link="/content">Content</NavItem>
             </li>
             <li>
-              <Link to="/detail/2">Detail</Link>
+              <NavItem link="/detail/2">Detail</NavItem>
             </li>
           </ul>
         </nav>
@@ -33,7 +36,7 @@ function App() {
         <Route path="/" exact component={MainRoute} />
         <Route path="/content" component={Coba} />
         <Route path="/detail/:id" exact component={Detail} />
-        <Route render={() => <Redirect to="/" />} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
